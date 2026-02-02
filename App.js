@@ -1,32 +1,51 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View , Button } from 'react-native';
-import { useState } from 'react';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View, TextInput, ScrollView } from "react-native";
+import { useState } from "react";
 
 export default function App() {
-  const [count, setCount] = useState(0)
+  const car = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "b",
+    "c",
+    "d",
+    "b",
+    "c",
+    "d",
+    "b",
+    "c",
+    "d",
+    "b",
+    "c",
+    "d",
+    "b",
+    "c",
+    "d",
+    "b",
+    "c",
+    "d",
+  ];
   return (
-    <View style={styles.container}> 
-      <Text>Hello World!</Text> 
-      <Hello name="WEB"/>
-      <Text>Count : {count}</Text>
-      <Button onPress={()=>setCount(count+1)} title="Click Me" />
-      <StatusBar style="dark" /> 
+    <View style={styles.container}>
+      <ScrollView>
+        {car.map((leter) => (
+          <Text style={styles.text}>{leter}</Text>
+        ))}
+      </ScrollView>
     </View>
   );
 }
 
-
-const Hello=({name})=>{
-  return <Text>IM MOHAMMED {name}</Text>
-
-}
-
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'red',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "red",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    paddingBottom: 0,
   },
 });
